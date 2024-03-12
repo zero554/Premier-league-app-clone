@@ -12,7 +12,7 @@ class GetFootballEventsUseCase @Inject constructor (
 
     suspend operator fun invoke() = flow {
         try {
-            val footballEvents = footballRepository.getFootballEventsData("26")
+            val footballEvents = footballRepository.getFootballEventsData("28")
             emit(Result.Success(footballEvents))
         } catch (e: Exception) {
             if (e is CancellationException) throw e
